@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+double taxrate1 = 0.1;
+double taxrate2 = 0.15;
+double taxrate3 = 0.25;
+
+double TAX1_SINGLE = 8000.00;
+double TAX2_SINGLE = 32000.00;
+double TAX3_SINGLE = 32001.00; 
+
+double TAX1_MARRIED = 16000.00;
+double TAX2_MARRIED = 64000.00;
+double TAX3_MARRIED = 64001.00; 
+
+double TAX1;
+double income = 0; 
+string MARITAL_STATUS; 
+
+cout << " Enter your income: " << endl;
+  cin >> income; 
+cout << " Please enter your marital status; single or married " << endl;
+  cin >> MARITAL_STATUS; 
+
+if( MARITAL_STATUS == "single")
+{
+  if( income <= TAX1_SINGLE)
+{
+  TAX1 = ( income * taxrate1 );
+    cout << " Yow will have to pay $" << TAX1 << endl; 
+}
+else if( income >= TAX1_SINGLE && income <= TAX2_SINGLE)
+{
+  TAX1 = ( income * taxrate2 ) + 800; 
+   cout << " Yow will have to pay $" << TAX1 <<endl;
+}
+else if( income >= TAX3_SINGLE)
+{
+  TAX1 = ( income * taxrate3 ) + 4400; 
+   cout << " Yow will have to pay $" << TAX1 <<endl;
+}
+}
+if( MARITAL_STATUS == "married")
+{
+  if( income <= TAX1_MARRIED)
+{
+  TAX1 = ( income * taxrate1 );
+    cout << " Yow will have to pay $" << TAX1 << endl; 
+}
+else if( income >= TAX1_MARRIED && income <= TAX2_MARRIED)
+{
+  TAX1 = ( income * taxrate2 ) + 1600; 
+   cout << " Yow will have to pay $" << TAX1 <<endl;
+}
+else if( income >= TAX3_MARRIED)
+{
+  TAX1 = ( income * taxrate3 ) + 8800; 
+   cout << " Yow will have to pay $" << TAX1 <<endl;
+}
+} 
+/*
+ make -s
+ ./main
+ Enter your income: 
+23432.43
+ Please enter your marital status; single or married 
+single
+ Yow will have to pay $4314.86
+ 
+*/
+  
+return 0; 
+}
